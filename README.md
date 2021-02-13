@@ -1,17 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Book Store
+# Bookstore Manager
 
-> One paragraph statement about the project.
-
-
-Additional description about the project and its features.
+> This is a bookstore management application built with ReactJS and Redux.
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- ReactJS,
+- Redux,
+- Jest
+- Enzyme
 
 ## Live Demo
 
