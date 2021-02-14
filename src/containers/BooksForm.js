@@ -11,20 +11,28 @@ const BooksForm = () => {
 
   return (
     <form>
-      <label htmlFor="title">Title:</label>
       <br />
-      <input type="text" />
+      Add a book
       <br />
-      <label htmlFor="category">Select a Category:</label>
+      <label htmlFor="title">
+        Title:
+        <input type="text" id="title" />
+      </label>
       <br />
-      <select name="cars" id="cars">
-        {categories.map((category, index) => (
-          <option key={index} value="volvo">
-            {category}
-          </option>
-        ))}
-      </select>
+      <label htmlFor="category">
+        Select a Category:
+        <select name="category" id="category">
+          {categories.map(category => (
+            <option key={category} value="volvo">
+              {category}
+            </option>
+          ))}
+        </select>
+      </label>
+      <br />
       <input type="submit" />
+      <br />
+      <br />
     </form>
   );
 };

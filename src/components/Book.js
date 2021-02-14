@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-const Book = (props) => {
-  const { id, title, category } = props.book;
+const Book = props => {
+  const { book: { id, title, category } = undefined } = props;
   return (
     <tr>
       <td>{id}</td>
@@ -12,9 +12,11 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  book: PropTypes.objectOf({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Book;
