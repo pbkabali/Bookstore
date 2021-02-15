@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { createBook } from '../actions';
 
-const BooksForm = () => {
+const BooksForm = props => {
   const categories = [
     'Action',
     'Biography',
@@ -11,10 +14,14 @@ const BooksForm = () => {
     'Sci-Fi',
   ];
 
-  const [bookDetails, setBookDetails] = useState({
+  const { submitBookDetails } = props;
+
+  const initialState = {
     title: '',
     category: categories[0],
-  });
+  };
+
+  const [bookDetails, setBookDetails] = useState(initialState);
 
   const { title, category } = bookDetails;
 
@@ -26,8 +33,13 @@ const BooksForm = () => {
     });
   };
 
+  const handleSubmit = () => {
+    submitBookDetails(bookDetails);
+    setBookDetails(initialState);
+  };
+
   return (
-    <form>
+    <div>
       <br />
       Add a book
       <br />
@@ -52,11 +64,21 @@ const BooksForm = () => {
         </select>
       </label>
       <br />
-      <input type="submit" />
+      <button type="submit" onClick={handleSubmit}>
+        Submit
+      </button>
       <br />
       <br />
-    </form>
+    </div>
   );
 };
 
-export default BooksForm;
+BooksForm.propTypes = {
+  submitBookDetails: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = {
+  submitBookDetails: createBook,
+};
+
+export default connect(null, mapDispatchToProps)(BooksForm);
