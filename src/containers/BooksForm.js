@@ -1,10 +1,6 @@
 import { useState } from 'react';
 
-import { useState } from 'react';
-
 const BooksForm = () => {
-  const [bookDetails, setBookDetails] = useState({ title: '', category: '' });
-
   const categories = [
     'Action',
     'Biography',
@@ -15,6 +11,21 @@ const BooksForm = () => {
     'Sci-Fi',
   ];
 
+  const [bookDetails, setBookDetails] = useState({
+    title: '',
+    category: categories[0],
+  });
+
+  const { title, category } = bookDetails;
+
+  const handleChange = e => {
+    setBookDetails(prevDetails => {
+      const newDetails = { ...prevDetails };
+      newDetails[e.target.id] = e.target.value;
+      return newDetails;
+    });
+  };
+
   return (
     <form>
       <br />
@@ -22,14 +33,19 @@ const BooksForm = () => {
       <br />
       <label htmlFor="title">
         Title:
-        <input type="text" id="title" />
+        <input value={title} type="text" id="title" onChange={handleChange} />
       </label>
       <br />
       <label htmlFor="category">
         Select a Category:
-        <select name="category" id="category">
-          {categories.map((category) => (
-            <option key={category} value="volvo">
+        <select
+          name="category"
+          id="category"
+          value={category}
+          onChange={handleChange}
+        >
+          {categories.map(category => (
+            <option key={category} value={category}>
               {category}
             </option>
           ))}
