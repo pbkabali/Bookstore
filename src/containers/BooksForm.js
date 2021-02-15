@@ -4,17 +4,7 @@ import PropTypes from 'prop-types';
 import { createBook } from '../actions';
 
 const BooksForm = props => {
-  const categories = [
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
-  ];
-
-  const { submitBookDetails } = props;
+  const { categories, submitBookDetails } = props;
 
   const initialState = {
     title: '',
@@ -74,6 +64,7 @@ const BooksForm = props => {
 };
 
 BooksForm.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   submitBookDetails: PropTypes.func.isRequired,
 };
 
