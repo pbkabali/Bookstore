@@ -1,4 +1,10 @@
+import { useState } from 'react';
+
+import { useState } from 'react';
+
 const BooksForm = () => {
+  const [bookDetails, setBookDetails] = useState({ title: '', category: '' });
+
   const categories = [
     'Action',
     'Biography',
@@ -22,7 +28,7 @@ const BooksForm = () => {
       <label htmlFor="category">
         Select a Category:
         <select name="category" id="category">
-          {categories.map(category => (
+          {categories.map((category) => (
             <option key={category} value="volvo">
               {category}
             </option>
