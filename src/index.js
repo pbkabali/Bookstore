@@ -24,6 +24,7 @@ const initialState = {
       category: 'History',
     },
   ],
+  filter: 'All',
 };
 
 const store = createStore(rootReducer, initialState);
