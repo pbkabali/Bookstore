@@ -34,8 +34,10 @@ const BooksForm = props => {
   };
 
   const handleSubmit = () => {
-    submitBookDetails(bookDetails);
-    setBookDetails(initialState);
+    if (title.trim() !== '' && categories.includes(category)) {
+      submitBookDetails(bookDetails);
+      setBookDetails(initialState);
+    }
   };
 
   return (
