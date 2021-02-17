@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book/Book';
-import CategoryFilter from '../components/CategoryFilter';
+import CategoryFilter from '../components/CategoryFilter/CategoryFilter';
 import { changeFilter, removeBook } from '../actions';
 
 const BooksList = props => {
@@ -20,12 +20,13 @@ const BooksList = props => {
   const filterBooks = (books, filter) => (filter === 'All' ? books : books.filter(book => book.category === filter));
 
   return (
-    <div className="side-padding book-area">
+    <div className="side-padding">
       <CategoryFilter categories={categories} onChange={handleFilterChange} />
-
-      {filterBooks(books, filter).map(book => (
-        <Book key={book.id} book={book} deleteBook={handleRemoveBook} />
-      ))}
+      <div className="book-area">
+        {filterBooks(books, filter).map(book => (
+          <Book key={book.id} book={book} deleteBook={handleRemoveBook} />
+        ))}
+      </div>
     </div>
   );
 };
