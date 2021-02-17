@@ -23,9 +23,13 @@ const BooksList = props => {
     <div className="side-padding">
       <CategoryFilter categories={categories} onChange={handleFilterChange} />
       <div className="book-area">
-        {filterBooks(books, filter).map(book => (
-          <Book key={book.id} book={book} deleteBook={handleRemoveBook} />
-        ))}
+        {filterBooks(books, filter).length > 0 ? (
+          filterBooks(books, filter).map(book => (
+            <Book key={book.id} book={book} deleteBook={handleRemoveBook} />
+          ))
+        ) : (
+          <h2>{`There are no books in the ${filter} category`}</h2>
+        )}
       </div>
     </div>
   );
