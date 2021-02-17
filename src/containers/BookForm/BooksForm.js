@@ -1,14 +1,24 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { createBook } from '../actions';
+import { createBook } from '../../actions';
+import styles from './BooksForm.module.css';
+
+const {
+  flex,
+  newBookDiv,
+  titleInput,
+  categoryInput,
+  submitBtn,
+  fieldSize,
+} = styles;
 
 const BooksForm = props => {
   const { categories, submitBookDetails } = props;
 
   const initialState = {
     title: '',
-    category: categories[0],
+    category: 'Category',
   };
 
   const [bookDetails, setBookDetails] = useState(initialState);
@@ -29,36 +39,41 @@ const BooksForm = props => {
   };
 
   return (
-    <div>
-      <br />
-      Add a book
-      <br />
-      <label htmlFor="title">
-        Title:
-        <input value={title} type="text" id="title" onChange={handleChange} />
-      </label>
-      <br />
-      <label htmlFor="category">
-        Select a Category:
+    <div className={newBookDiv}>
+      <h3>ADD NEW BOOK</h3>
+      <div className={flex}>
+        <input
+          className={[titleInput, fieldSize].join(' ')}
+          value={title}
+          placeholder="Book title"
+          type="text"
+          id="title"
+          onChange={handleChange}
+        />
         <select
-          name="category"
+          className={[categoryInput, fieldSize].join(' ')}
+          placeholder="category"
           id="category"
           value={category}
           onChange={handleChange}
         >
+          <option disabled selected>
+            Category
+          </option>
           {categories.map(category => (
             <option key={category} value={category}>
               {category}
             </option>
           ))}
         </select>
-      </label>
-      <br />
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
-      <br />
-      <br />
+        <button
+          className={[submitBtn, fieldSize].join(' ')}
+          type="submit"
+          onClick={handleSubmit}
+        >
+          ADD BOOK
+        </button>
+      </div>
     </div>
   );
 };

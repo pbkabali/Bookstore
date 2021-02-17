@@ -1,0 +1,31 @@
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newBookDiv {
+  border-top: 1px solid #f0f0f0;
+}
+
+.titleInput {
+  width: 50%;
+}
+
+.categoryInput {
+  width: 30%;
+}
+
+.submitBtn {
+  width: 15%;
+  background-color: #0290ff;
+  color: #fff;
+}
+
+.fieldSize {
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #f0f0f0;
+  outline: none;
+  border-radius: 3px;
+}
