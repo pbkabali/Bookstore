@@ -1,0 +1,127 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.bookCard {
+  justify-content: space-between;
+  height: 170px;
+  padding: 10px 147px 10px 27px;
+  border-radius: 4px;
+  border: solid 1px #f0f0f0;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.categoryLabel {
+  margin: 0;
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: bold;
+  color: #121212;
+}
+
+.titleLabel {
+  margin: 3px 0 0 0;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.author {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.actionsDiv {
+  min-width: 15vw;
+  justify-content: space-between;
+}
+
+.action {
+  border: none;
+  background-color: transparent;
+  padding: 15px 0 10px 0;
+  color: #4386bf;
+  font-weight: normal;
+  outline: none;
+}
+
+.action:hover {
+  font-weight: bold;
+}
+
+.separator {
+  font-size: 30px;
+  font-weight: 200;
+  color: #e8e8e8;
+}
+
+.currentChapter {
+  font-size: 13px;
+  font-weight: 300;
+  color: #121212;
+}
+
+.chapter {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.updateBtn {
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.progressDiv {
+  width: 50%;
+  justify-content: space-between;
+}
+
+.loadingDiv {
+  border-right: 1px solid #e8e8e8;
+  padding-right: 23%;
+}
+
+.singleChart {
+  width: 100px;
+  justify-content: space-around;
+}
+
+.circularChart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+  stroke: #0290ff;
+}
+
+.circleBg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+.completed {
+  color: #121212;
+  margin-top: -10px;
+}
+
+.percentage {
+  margin: 0 0 10px 0;
+  font-size: x-large;
+}

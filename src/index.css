@@ -1,3 +1,9 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family:
@@ -14,6 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
 }
 
 code {
@@ -24,4 +31,13 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.side-padding {
+  padding: 0 100px 0 100px;
+}
+
+.book-area {
+  overflow: scroll;
+  height: 65vh;
 }

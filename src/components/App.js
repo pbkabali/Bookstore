@@ -1,5 +1,6 @@
 import BooksList from '../containers/BooksList';
-import BooksForm from '../containers/BooksForm';
+import BooksForm from '../containers/BookForm/BooksForm';
+import Header from './Header/Header';
 
 const App = () => {
   const categories = [
@@ -13,8 +14,11 @@ const App = () => {
   ];
   return (
     <div>
-      <BooksForm categories={categories} />
+      <Header />
       <BooksList categories={categories} />
+      <div className="side-padding">
+        <BooksForm categories={categories} />
+      </div>
     </div>
   );
 };
